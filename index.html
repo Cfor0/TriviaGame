@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trivia Game</title>
     <link rel="stylsheet" href="assets/css/style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+
 <body>
-    
+    <section>
+        <header>
+            <h1> Total Trivial Trivia</h1>
+        </header>
+
+        <button id="start">Start</button>
+
+        <div class="questions">
+            <h2 id="timer"></h2>
+            <div id="game"></div>
+            <form>
+                <h4 id="question1">
+                    <button class="button"></button>
+                </h4>
+                <h4 id="question2">
+                    <button class="button"></button>
+                </h4>
+                <h4 id="question3">
+                    <button class="button"></button>
+                </h4>
+                <h4 id="question4">
+                    <button class="button"></button>
+                </h4>
+                <h4 id="question5">
+                    <button class="button"></button>
+
+                </h4>
+            </form>
+
+
+
+        </div>
+
+    </section>
+
 
 
 
@@ -19,4 +56,5 @@
 
     <script src="assets/javascript/app.js"></script>
 </body>
+
 </html>
