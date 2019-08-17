@@ -29,17 +29,22 @@ $(document).ready(function () {
         },
     ];
     console.log(gameQuestions)
-
+    var score = 0
+    var lost = 0
     // load game Questions
     var currentQuestion = 0;
     var counter = 30;
     //creating variable for timer in the global scope
     var timer;
 
+
+
+    //go to next question when timer = 0
     function nextQuestion() {
         var isQuestionOver = (gameQuestions.length - 1) === currentQuestion;
         if (isQuestionOver) {
-
+            showResult();
+            console.log('over')
         } else {
             currentQuestion++;
             loadQuestions();
@@ -92,9 +97,33 @@ $(document).ready(function () {
 
     });
 
-    // create variable for setTimeout
-    // make answer buttons only one select
-    // rese
+    // clicking right or wrong answer, move to next question
+    $(document).on("click", ".choice", function () {
+        clearInterval(timer);
+        var userAnswer = $(this).attr('data-answer');
+        var correctAnswer = gameQuestions[currentQuestion].correctAnswer;
+        if (correctAnswer === userAnswer) {
+            score++;
+            console.log('win')
+            nextQuestion();
+        } else {
+            lost++;
+            nextQuestion();
+            console.log('loss')
+        }
+        console.log('works: ', userAnswer)
+    })
+
+    function showResult(){
+        var result = `
+        <p>You get ${score} questions right</p>
+        <p>You missed ${lost} questions </p>
+        <p>Total Questions: ${gameQuestions.length} questions</p>
+        <button>Reset Game</button>
+
+        `;
+        $("#game").html(result);
+    }
 
 
 
