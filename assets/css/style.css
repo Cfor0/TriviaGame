@@ -4,3 +4,20 @@
     border-radius: 4px;
     cursor: pointer;
 }
+body {
+    background-color: rgb(43, 226, 83);
+}
+section {
+    text-align: center;
+    margin: 25px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 250px;
+    background-color: #fef392;
+
+}
+
+h1 {
+    color: #2829eb;
+    font-size: 60px;
+}

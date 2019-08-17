@@ -119,7 +119,7 @@ $(document).ready(function () {
         <p>You get ${score} questions right</p>
         <p>You missed ${lost} questions </p>
         <p>Total Questions: ${gameQuestions.length} questions</p>
-        <button>Reset Game</button>
+        <button id="Reset">Reset Game</button>
 
         `;
         $("#game").html(result);
