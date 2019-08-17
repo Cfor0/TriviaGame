@@ -33,7 +33,7 @@ $(document).ready(function () {
     var lost = 0
     // load game Questions
     var currentQuestion = 0;
-    var counter = 30;
+    var counter = 10;
     //creating variable for timer in the global scope
     var timer;
 
@@ -65,7 +65,7 @@ $(document).ready(function () {
     }
 
     function loadQuestions() {
-        counter = 30;
+        counter = 10;
         timer = setInterval(countdown, 1000);
 
         var question = gameQuestions[currentQuestion].question;
@@ -92,9 +92,6 @@ $(document).ready(function () {
     $("#start").click(function startTimer() {
         $("#start").hide();
         $(".questions").show();
-
-
-
     });
 
     // clicking right or wrong answer, move to next question
@@ -114,7 +111,7 @@ $(document).ready(function () {
         console.log('works: ', userAnswer)
     })
 
-    function showResult(){
+    function showResult() {
         var result = `
         <p>You get ${score} questions right</p>
         <p>You missed ${lost} questions </p>
@@ -124,7 +121,15 @@ $(document).ready(function () {
         `;
         $("#game").html(result);
     }
-
+    // reset function
+    $(document).on("click", "#Reset", function () {
+        score = 0;
+        lost = 0;
+        currentQuestion = 0;
+        counter = 10;
+        timer;
+        loadQuestions();
+    })
 
 
 
